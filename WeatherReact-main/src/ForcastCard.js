@@ -1,22 +1,21 @@
 import React from "react";
+import useWeather from "./utils/useWeather";
+import ForcastCard from "./ForcastCard";
 
-const ForcastCard = ({ aestro, day }) => {
-  console.log({ day });
+const Forecast = () => {
+  const data = useWeather();
+
   return (
-    <div className="card shadow-2xl bg-[#11151c] w-72 ml-5">
-      <div className="card-body">
-        <div className="card-actions justify-center">
-        <figure><img src={day?.condition?.icon} /></figure>
-        </div>
-        <div className="card-actions justify-center">
-        <h1>{day?.maxtemp_c}°/{day?.mintemp_c}°</h1>
-        </div>
+    <div className="my-5  glass h-auto">
+      <h1 className="text-center text-4xl font-bold m-5">7 days Forecast</h1>
+      <div className="border-2 rounded-md flex ">
+        {data?.forecast?.forecastday?.map((forcastData) => {
+          // console.log({ forcastData });
+          return <ForcastCard {...forcastData} />;
+        })}
       </div>
     </div>
   );
 };
 
-export default ForcastCard;
-
-
-
+export default Forecast;
