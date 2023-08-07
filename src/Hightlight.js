@@ -20,7 +20,7 @@ function Hightlight() {
             </div>
             <div className="card w-80 bg-[#11151c] shadow-xl mr-1">
               <div className="card-body">
-                <h2 className="card-title text-7xl"><BsSun/></h2>
+                <h2 className="card-title text-7xl"><BsSun/>.</h2>
                 <p></p>
               </div>
             </div>
